@@ -1,7 +1,7 @@
 -- Code to build out video game database
 CREATE TABLE games (
     id int PRIMARY KEY,
-    title varchar(200) UNIQUE,
+    title varchar(200) NOT NULL UNIQUE,
     players int,
     release_date date,
     rating decimal
@@ -9,7 +9,7 @@ CREATE TABLE games (
 
 CREATE TABLE publisher (
     id int PRIMARY KEY,
-    name varchar(30) UNIQUE,
+    name varchar(30) NOT NULL UNIQUE,
     number_games_published int,
     year_founded varchar(4),
     first_party boolean
@@ -17,7 +17,7 @@ CREATE TABLE publisher (
 
 CREATE TABLE developer (
     id int PRIMARY KEY,
-    name varchar(30) UNIQUE,
+    name varchar(30) NOT NULL UNIQUE,
     number_games_developed int,
     year_founded varchar(4),
     first_party boolean    
@@ -32,7 +32,7 @@ CREATE TABLE games_developers_publishers (
 
 CREATE TABLE consoles (
     id int PRIMARY KEY,
-    name varchar(30) UNIQUE,
+    name varchar(30) NOT NULL UNIQUE,
     year_released varchar(4),
     developer varchar(30) REFERENCES developer(name),
     total_games int
