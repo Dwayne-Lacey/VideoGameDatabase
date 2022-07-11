@@ -10,7 +10,6 @@ CREATE TABLE games (
 CREATE TABLE publisher (
     id int PRIMARY KEY,
     name varchar(30) NOT NULL UNIQUE,
-    number_games_published int,
     year_founded varchar(4),
     first_party boolean
 );
@@ -18,7 +17,6 @@ CREATE TABLE publisher (
 CREATE TABLE developer (
     id int PRIMARY KEY,
     name varchar(30) NOT NULL UNIQUE,
-    number_games_developed int,
     year_founded varchar(4),
     first_party boolean    
 );
@@ -46,11 +44,12 @@ CREATE TABLE games_and_consoles (
 
 CREATE TABLE genre (
     id int PRIMARY KEY,
-    name varchar(30) UNIQUE
+    name varchar(30) UNIQUE,
+    description varchar(300)
 );
 
 CREATE TABLE games_genre (
-    name varchar(30) REFERENCES genre(name),
+    genre_name varchar(30) REFERENCES genre(name),
     game_title varchar(200) REFERENCES games(title),
     PRIMARY KEY (name, game_title)
 );
