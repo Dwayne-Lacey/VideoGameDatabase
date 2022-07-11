@@ -3,8 +3,6 @@ import psycopg2
 from video_game_data import games_data, consoles, developer, publisher, games_developers_publishers_data, genre, games_genre, games_and_consoles
 # Class designed to insert all pertinent data into video game database
 class DataInserter:
-    def __init__(self):
-        pass
     def insert_games(self, cur, data_set):
         for data in data_set:
             cur.execute("INSERT INTO games(id, title, players, release_date, rating) VALUES (%s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4]))
@@ -61,5 +59,5 @@ class DataInserter:
         conn.close()
 
 
-db_insert = DataInserter
+db_insert = DataInserter()
 db_insert.insert_db_data()
