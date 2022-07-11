@@ -84,7 +84,7 @@ games_and_consoles = [
     ("007: Agent Under Fire", "Playstation 2"),
     ("007: Everything or Nothing", "GameCube"),
     ("007: Everything or Nothing", "Xbox"),
-    ("007: Everything or Nothing", "Playstation 2")
+    ("007: Everything or Nothing", "Playstation 2"),
     ("007: Nightfire", "GameCube"),
     ("007: Nightfire", "Xbox"),
     ("007: Nightfire", "Playstation 2"),
@@ -137,8 +137,8 @@ games_genre = [
     ("AstroPop Deluxe", "Puzzle"),
     ("Auto Modellista", "Racing / Driving"),
     ("Animal Crossing", "Simulation"),
-    ("Army Men: Sarge's War", "Action")
-    ("Avatar: The Last Airbender", "Action")
+    ("Army Men: Sarge's War", "Action"),
+    ("Avatar: The Last Airbender", "Action"),
     ("Barbarian", "Action"),
     ("Batman: Rise of Sin Tzu", "Action"),
     ("Battlefield 2: Modern Combat", "Action"),
