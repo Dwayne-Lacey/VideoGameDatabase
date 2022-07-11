@@ -38,7 +38,10 @@ developer = [
     (16, "Digital Illusions CE AB", "1992", False),
     (17, "Snowblind Studios, Inc.", "1997", False),
     (18, "tri-Crescendo Inc.", "1999", False),
-    (19, "Monolith Software, Inc.", "1999", True)]
+    (19, "Monolith Software, Inc.", "1999", True),
+    (20, "Nintendo", "1889", True),
+    (21, "Microsoft", "1975", True),
+    (22, "Sony", "1946", True)]
 
 publisher = [
     (1, "Electronic Arts, Inc.", "1982", False),
