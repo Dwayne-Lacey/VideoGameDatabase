@@ -33,7 +33,7 @@ class DataInserter:
 
     def insert_games_genre(self, cur, data_set):
         for data in data_set:
-            cur.execute("INSERT INTO games_genre(genre_name, game_title) VALUES (%s, %s)", (data[0], data[1]))
+            cur.execute("INSERT INTO games_genre(genre_name, game_title) VALUES (%s, %s)", (data[1], data[0]))
 
     def insert_db_data(self):
         # Connecting to my postgres DB
@@ -45,8 +45,8 @@ class DataInserter:
         # Execute a query
         # Function calls to specific dataset entry functions
         self.insert_games(cur, games_data)
-        self.insert_consoles(cur, consoles)
         self.insert_developers(cur, developer)
+        self.insert_consoles(cur, consoles)
         self.insert_publishers(cur, publisher)
         self.insert_games_developers_publishers(cur, games_developers_publishers_data)
         self.insert_genre(cur, genre)
