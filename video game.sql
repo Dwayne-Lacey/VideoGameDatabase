@@ -37,7 +37,7 @@ CREATE TABLE consoles (
 );
 
 CREATE TABLE games_and_consoles (
-    game_id int REFERENCES games(title),
+    game_id int REFERENCES games(id),
     console_id int REFERENCES consoles(id),
     PRIMARY KEY (game_id, console_id)
 );
