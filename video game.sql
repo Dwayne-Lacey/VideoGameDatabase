@@ -22,24 +22,24 @@ CREATE TABLE developer (
 );
 
 CREATE TABLE games_developers_publishers (
-    game_title varchar(200) REFERENCES games(title),
-    developer_name varchar(50) REFERENCES developer(name),
-    publisher_name varchar(50) REFERENCES publisher(name),
-    PRIMARY KEY (game_title, developer_name, publisher_name)
+    game_id int REFERENCES games(id),
+    developer_id int REFERENCES developer(id),
+    publisher_id int REFERENCES publisher(id),
+    PRIMARY KEY (game_id, developer_id, publisher_id)
 );
 
 CREATE TABLE consoles (
     id int PRIMARY KEY,
     name varchar(30) NOT NULL UNIQUE,
     year_released varchar(4),
-    developer varchar(30) REFERENCES developer(name),
+    developer_id int REFERENCES developer(id),
     total_games int
 );
 
 CREATE TABLE games_and_consoles (
-    game_title varchar(200) REFERENCES games(title),
-    console_name varchar(30) REFERENCES consoles(name),
-    PRIMARY KEY (game_title, console_name)
+    game_id int REFERENCES games(title),
+    console_id int REFERENCES consoles(id),
+    PRIMARY KEY (game_id, console_id)
 );
 
 CREATE TABLE genre (
@@ -49,7 +49,7 @@ CREATE TABLE genre (
 );
 
 CREATE TABLE games_genre (
-    genre_name varchar(30) REFERENCES genre(name),
-    game_title varchar(200) REFERENCES games(title),
-    PRIMARY KEY (name, game_title)
+    genre_id int REFERENCES genre(id),
+    game_id int REFERENCES games(id),
+    PRIMARY KEY (genre_id, game_id)
 );
