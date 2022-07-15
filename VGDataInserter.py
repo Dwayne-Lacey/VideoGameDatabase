@@ -9,7 +9,7 @@ class DataInserter:
 
     def insert_consoles(self, cur, data_set):
         for data in data_set:
-            cur.execute("INSERT INTO consoles(id, name, year_released, developer, total_games) VALUES (%s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4]))
+            cur.execute("INSERT INTO consoles(id, name, year_released, developer_id, total_games) VALUES (%s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4]))
 
     def insert_developers(self, cur, data_set):
         for data in data_set:
@@ -21,7 +21,7 @@ class DataInserter:
 
     def insert_games_developers_publishers(self, cur, data_set):
         for data in data_set:
-            cur.execute("INSERT INTO games_developers_publishers(game_title, developer_name, publisher_name) VALUES (%s, %s, %s)", (data[0], data[1], data[2]))
+            cur.execute("INSERT INTO games_developers_publishers(game_id, developer_id, publisher_id) VALUES (%s, %s, %s)", (data[0], data[1], data[2]))
 
     def insert_genre(self, cur, data_set):
         for data in data_set:
@@ -29,11 +29,11 @@ class DataInserter:
 
     def insert_games_consoles(self, cur, data_set):
         for data in data_set:
-            cur.execute("INSERT INTO games_and_consoles(game_title, console_name) VALUES (%s, %s)", (data[0], data[1]))
+            cur.execute("INSERT INTO games_and_consoles(game_id, console_id) VALUES (%s, %s)", (data[0], data[1]))
 
     def insert_games_genre(self, cur, data_set):
         for data in data_set:
-            cur.execute("INSERT INTO games_genre(genre_name, game_title) VALUES (%s, %s)", (data[1], data[0]))
+            cur.execute("INSERT INTO games_genre(genre_id, game_id) VALUES (%s, %s)", (data[1], data[0]))
 
     def insert_db_data(self):
         # Connecting to my postgres DB
